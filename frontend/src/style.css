@@ -1,0 +1,152 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f5f7fa;
+  min-height: 100vh;
+}
+
+#app {
+  min-height: 100vh;
+}
+
+.timeline-container {
+  display: flex;
+  position: relative;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.timeline-time-header {
+  width: 80px;
+  flex-shrink: 0;
+  background: #fafafa;
+  border-right: 1px solid #ebeef5;
+}
+
+.timeline-time-cell {
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #909399;
+  border-bottom: 1px solid #ebeef5;
+}
+
+.timeline-rooms {
+  flex: 1;
+  overflow-x: auto;
+}
+
+.timeline-room-header {
+  display: flex;
+  border-bottom: 1px solid #ebeef5;
+  background: #fafafa;
+}
+
+.timeline-room-name {
+  flex: 1;
+  min-width: 200px;
+  padding: 12px;
+  text-align: center;
+  font-weight: 600;
+  border-right: 1px solid #ebeef5;
+}
+
+.timeline-room-name:last-child {
+  border-right: none;
+}
+
+.timeline-body {
+  position: relative;
+}
+
+.timeline-row {
+  display: flex;
+  position: relative;
+}
+
+.timeline-room-column {
+  flex: 1;
+  min-width: 200px;
+  border-right: 1px solid #ebeef5;
+  position: relative;
+}
+
+.timeline-room-column:last-child {
+  border-right: none;
+}
+
+.timeline-cell {
+  height: 48px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.booking-block {
+  position: absolute;
+  left: 4px;
+  right: 4px;
+  border-radius: 4px;
+  padding: 6px 8px;
+  font-size: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.2s;
+  z-index: 1;
+}
+
+.booking-block:hover {
+  transform: scale(1.02);
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.booking-block.approved {
+  background: linear-gradient(135deg, #67c23a 0%, #85ce61 100%);
+  color: #fff;
+}
+
+.booking-block.pending {
+  background: linear-gradient(135deg, #e6a23c 0%, #f0c78a 100%);
+  color: #fff;
+}
+
+.booking-block .booking-title {
+  font-weight: 600;
+  margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.booking-block .booking-time {
+  font-size: 11px;
+  opacity: 0.9;
+}
+
+.current-time-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #f56c6c;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.current-time-line::before {
+  content: '';
+  position: absolute;
+  left: -4px;
+  top: -4px;
+  width: 10px;
+  height: 10px;
+  background: #f56c6c;
+  border-radius: 50%;
+}
